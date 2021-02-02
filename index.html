@@ -10,84 +10,183 @@
             <h1>Welcome to the COVID-19 Assessment Website!</h1>
         </header>
         <section>
-            <!-- Gather data from user in an appropriate manner -->
             <h2>Please fill out the form below:</h2>
+            <!-- Gather data from user in an appropriate manner -->
             <article>
+                <h4>The answers you provide will be used to determine whether you need to get tested, treated, or hospitalized.</h4>
                 <!-- Define a form -->
                 <!-- form will need an action tag eventually, when we connect a backend to store answers -->
                 <!-- Fun observation: defining a form allows for saved autofill values-->
                 <form>
                     <fieldset>
+                        <legend>Part 1: User Information</legend>
                         <!-- Part 1: User Information -->
-                        <h4>Please provide basic information about yourself below:</h4>
                         <!-- First name -->
-                        <label for="fname">First name:</label><br>		
-                        <input type="text" id="fname" name="fname" required><br>
-
+                        <p>
+                            <label for="fname">First name:</label><br>		
+                            <input type="text" id="fname" name="fname" required><br>
+                        </p>
+                    
                         <!-- Last name -->
-                        <label for="lname">Last name:</label><br>
-                        <input type="text" id="lname" name="lname" required><br>
-
+                        <p>
+                            <label for="lname">Last name:</label><br>
+                            <input type="text" id="lname" name="lname" required><br>
+                        </p>
+                        
                         <!-- Gender -->
                         <!-- One group (same name), three elements (different ids)-->
-                        <label for="gender">Gender:</label><br>
-                        <input id="gender" style="display:none"> <!-- a near trick for hiding an input-->
-                        <input type="radio" id="male" name="male" value="male">
-                        <label for="male">Male</label>
-                        <input type="radio" id="female" name="female" value="female">
-                        <label for="female">Female</label>
-                        <input type="radio" id="other" name="female" value="other">
-                        <label for="other">Other</label><br>
+                        <fieldset>
+                            <legend>Gender: </legend>
+                            <input type="radio" id="male" name="male" value="male">
+                            <label for="male">Male</label>
+                            <input type="radio" id="female" name="female" value="female">
+                            <label for="female">Female</label>
+                            <input type="radio" id="other" name="female" value="other">
+                            <label for="other">Other</label><br>
+                        </fieldset>
 
                         <!-- Phone -->
-                        <label for="phone">Phone:</label><br>
-                        <input type="text" id="phone" name="phone" required><br>
+                        <p>
+                            <label for="phone">Phone:</label><br>
+                            <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br>
+                        </p>
 
                         <!-- Email -->
-                        <label for="email">Email:</label><br>
-                        <input type="text" id="email" name="email" required><br>
-
+                        <p>
+                            <label for="email">Email:</label><br>
+                            <input type="text" id="email" name="email" required><br>
+                        </p>
+                        
                         <!-- Address -->
-                        <label for="address">Address:</label><br>
-                        <input type="text" id="address" name="address" required><br>
+                        <p>
+                            <label for="address">Address:</label><br>
+                            <input type="text" id="address" name="address" required><br>
+                        </p>
 
                         <!-- Date of birth -->
-                        <label for="dob">Date of birth:</label><br>
-                        <input type="date" id="dob" name="dob" value="2018-07-22" min="1900-01-01" max="2021-02-01"><br>
+                        <p>
+                            <label for="dob">Date of birth:</label><br>
+                            <input type="date" id="dob" name="dob" value="2018-07-22" min="1900-01-01" max="2021-02-01"><br>
+                        </p>
+                    </fieldset><br>
 
-                        <!-- Part 2: Symptom questionnaire -->
+                    <!-- Part 2: Symptom questionnaire -->
+                    <fieldset>
+                        <legend>Part 2: Potential symptoms</legend>
                         <h4>Have you experienced any of the following symptoms in the last 24 hours?</h4>
                         <h4>Please answer the following yes/no questions below:</h4>
 
                         <!-- Fever or chills-->
-                        <label for="p2q1">Fever or chills</label><br>
-                        <input id="p2q1" style="display:none"> <!-- a near trick for hiding an input-->
-                        <input type="radio" id="feverYes" name="p2q1" value="yes">
-                        <label for="feverYes">Yes</label>
-                        <input type="radio" id="feverNo" name="p2q1" value="no">
-                        <label for="feverNo">No</label><br>
-
+                        <p>
+                            <label for="fever">Fever or chills?</label><br>
+                            <select id="fever" name="fever">
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </p>
+                            
                         <!-- Cough -->
-                        <!-- Shortness of breath or difficulty breathing -->
-                        <!-- Fatigue -->
-                        <!-- Muscle or body aches -->
-                        <!-- Headaches-->
-                        <!-- New loss of taste or smell-->
-                        <!-- Sore throat -->
-                        <!-- Congestion or runny nose -->
-                        <!-- Nausea or vomiting -->
-                        <!-- Diarrhea -->
-                        
-                        <!-- Part 3: COMING SOON -->
+                        <p>
+                            <label for="cough">Cough?</label><br>
+                            <select id="cough" name="cough">
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </p>
 
-                        <!-- Submit the form -->
-                        <br>
-                        <label for="submit">Submit your responses:</label><br>
-                        <input type="submit" id="submit">
+                        <!-- Shortness of breath or difficulty breathing -->
+                        <p>
+                            <label for="breath">Shortness of breath or difficulty breathing?</label><br>
+                            <select id="breath" name="breath">
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </p>
+
+                        <!-- Fatigue -->
+                        <p>
+                            <label for="fatigue">Fatigue?</label><br>
+                            <select id="fatigue" name="fatigue">
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </p>
+
+                        <!-- Muscle or body aches -->
+                        <p>
+                            <label for="aches">Muscle or body aches?</label><br>
+                            <select id="aches" name="aches">
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </p>
+
+                        <!-- Headaches-->
+                        <p>
+                            <label for="headache">Headaches?</label><br>
+                            <select id="headache" name="headache">
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </p>
+
+                        <!-- New loss of taste or smell-->
+                        <p>
+                            <label for="sense">New loss of taste or smell?</label><br>
+                            <select id="sense" name="sense">
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </p>
+
+                        <!-- Sore throat -->
+                        <p>
+                            <label for="throat">Sore throat?</label><br>
+                            <select id="throat" name="throat">
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </p>
+                        
+                        <!-- Congestion or runny nose -->
+                        <p>
+                            <label for="nose">Congestion or runny nose?</label><br>
+                            <select id="nose" name="nose">
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </p>
+
+                        <!-- Nausea or vomiting -->
+                        <p>
+                            <label for="vom">Nausea or vomiting?</label><br>
+                            <select id="vom" name="vom">
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </p>
+
+                        <!-- Diarrhea -->
+                        <p>
+                            <label for="stinky">Diarrhea?</label><br>
+                            <select id="stinky" name="stinky">
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </p>
                     </fieldset>
+                        
+                    <!-- Part 3: COMING SOON -->
+                    
+                    <!-- Submit the form -->
+                    <br>
+                    <label for="submit">Submit your responses:</label><br>
+                    <input type="submit" id="submit">
+
                 </form>
             </article>
         </section>
         <footer>Copyright 2021 Covid Center Website</footer>
     </body>
 </html>
+
