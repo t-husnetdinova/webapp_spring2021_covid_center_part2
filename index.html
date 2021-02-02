@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Nu HTML checker approved -->
 <!-- good practive to define page language -->
 <html lang = "en">
     <head>
@@ -16,15 +17,16 @@
                 <!-- form will need an action tag eventually, when we connect a backend to store answers -->
                 <!-- Fun observation: defining a form allows for saved autofill values-->
                 <form>
-                    <!-- Part 1: User Information -->
+                    <fieldset>
+                        <!-- Part 1: User Information -->
                         <h4>Please provide basic information about yourself below:</h4>
                         <!-- First name -->
                         <label for="fname">First name:</label><br>		
-                        <input type="text" id="fname" name="fname"><br>
+                        <input type="text" id="fname" name="fname" required><br>
 
                         <!-- Last name -->
                         <label for="lname">Last name:</label><br>
-                        <input type="text" id="lname" name="lname"><br>
+                        <input type="text" id="lname" name="lname" required><br>
 
                         <!-- Gender -->
                         <!-- One group (same name), three elements (different ids)-->
@@ -39,21 +41,21 @@
 
                         <!-- Phone -->
                         <label for="phone">Phone:</label><br>
-                        <input type="text" id="phone" name="phone"><br>
+                        <input type="text" id="phone" name="phone" required><br>
 
                         <!-- Email -->
                         <label for="email">Email:</label><br>
-                        <input type="text" id="email" name="email"><br>
+                        <input type="text" id="email" name="email" required><br>
 
                         <!-- Address -->
                         <label for="address">Address:</label><br>
-                        <input type="text" id="address" name="address"><br>
+                        <input type="text" id="address" name="address" required><br>
 
                         <!-- Date of birth -->
                         <label for="dob">Date of birth:</label><br>
                         <input type="date" id="dob" name="dob" value="2018-07-22" min="1900-01-01" max="2021-02-01"><br>
 
-                    <!-- Part 2: Symptom questionnaire -->
+                        <!-- Part 2: Symptom questionnaire -->
                         <h4>Have you experienced any of the following symptoms in the last 24 hours?</h4>
                         <h4>Please answer the following yes/no questions below:</h4>
 
@@ -75,13 +77,14 @@
                         <!-- Congestion or runny nose -->
                         <!-- Nausea or vomiting -->
                         <!-- Diarrhea -->
+                        
+                        <!-- Part 3: COMING SOON -->
 
-                    <!-- Part 3: COMING SOON -->
-
-                    <!-- Submit the form -->
-                    <br>
-                    <label for="submit">Submit your responses:</label><br>
-                    <input type="submit" id="submit">
+                        <!-- Submit the form -->
+                        <br>
+                        <label for="submit">Submit your responses:</label><br>
+                        <input type="submit" id="submit">
+                    </fieldset>
                 </form>
             </article>
         </section>
